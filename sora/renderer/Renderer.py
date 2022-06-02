@@ -18,7 +18,7 @@ class Renderer:
 
             if actor.rotation != 0:
                 image = pygame.transform.rotate(image, -actor.rotation).convert_alpha()
-                rect = image.get_rect(center=image.get_rect(center = (actor.position.x, actor.position.y)).center)
+            rect = image.get_rect(center=image.get_rect(center = (actor.position.x, actor.position.y)).center)
 
             if image:
                 if actor.color != (255,255,255):
