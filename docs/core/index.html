@@ -144,13 +144,17 @@ zIndex : int
 </code></pre>
 <h5 id="methods">Methods</h5>
 <pre><code class="language-python">__init__([optional] name : str)
+# components
 add(component : core.Component)
 get(component : str) -&gt; core.Component
-getId() -&gt; int
 remove(component : str)
+
+# tag
 addTag(tag : str)
 hasTag(tag : str) -&gt; bool
 removeTag(tag : str)
+
+getId() -&gt; int
 start()
 update()
 end()
@@ -162,10 +166,13 @@ end()
 <pre><code class="language-python">
 </code></pre>
 <h5 id="methods_1">Methods</h5>
-<pre><code class="language-python">loadImage(name : str, filePath : str)
-loadSound(name : str, filePath : str)
+<pre><code class="language-python"># image
+loadImage(name : str, filePath : str)
 getImage(name : str) -&gt; pygame.Surface
 getSound(name : str) -&gt; pygame.mixer.Sound
+
+# sound
+loadSound(name : str, filePath : str)
 deleteImage(name : str)
 deleteSound(name : str)
 </code></pre>
@@ -192,11 +199,13 @@ background : tuple
 </code></pre>
 <h5 id="methods_3">Methods</h5>
 <pre><code class="language-python">__init__([optional], name : str)
+# actor
 add(actor : core.Actor)
 remove(actorId : int)
 get(actorId : int) -&gt; core.Actor
 get(name : str) -&gt; core.Actor
 getActors() -&gt; list [core.Actor]
+
 start()
 update()
 </code></pre>
@@ -212,11 +221,15 @@ keyboard : input.Keyboard
 </code></pre>
 <h5 id="methods_4">Methods</h5>
 <pre><code class="language-python">__init__(assets : core.AssetManager)
+# scene
 setScene(scene : core.Scene)
 getScene() -&gt; core.Scene
-create(width : int, height : int, title : str, [optional] flags : int)
+
+# sound
 playSound(name : str, volume : float)
 stopSound(name : str)
+
+create(width : int, height : int, title : str, [optional] flags : int)
 events()
 update()
 render()
