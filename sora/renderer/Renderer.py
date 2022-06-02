@@ -17,9 +17,11 @@ class Renderer:
             rect.y = actor.position.y
 
             if actor.rotation != 0:
-                image = pygame.transform.rotate(image, -actor.rotation)
+                image = pygame.transform.rotate(image, -actor.rotation).convert_alpha()
                 rect = image.get_rect(center=image.get_rect(center = (actor.position.x, actor.position.y)).center)
 
             if image:
+                if actor.color != (255,255,255):
+                    image.fill(actor.color, special_flags=pygame.BLEND_RGB_MULT)
                 image.set_colorkey((255, 0, 255))
                 surface.blit(image, rect)
