@@ -30,8 +30,8 @@ class Actor:
                     self.__components[component.name] = component
 
     def get(self, component : str):
-        if component.name in self.__components:
-            return self.__components[component.name]
+        if component in self.__components:
+            return self.__components[component]
 
     def getId(self):
         return self.__id
