@@ -23,7 +23,7 @@ class Actor:
         self.__components = {}
 
     def add(self, *components):
-        for compoennt in components:
+        for component in components:
             if isinstance(component, Component):
                 if not component.name in self.__components:
                     component.actor = self
