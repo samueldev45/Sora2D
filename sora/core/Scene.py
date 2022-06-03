@@ -10,10 +10,11 @@ class Scene:
         self.__appendQueue = []
         self.__removeQueue = []
 
-    def add(self, actor):
-        if isinstance(actor, Actor):
-            if not actor in self.__appendQueue:
-                self.__appendQueue.append(actor)
+    def add(self, *actors):
+        for actor in actors:
+            if isinstance(actor, Actor):
+                if not actor in self.__appendQueue:
+                    self.__appendQueue.append(actor)
 
     def remove(self, actorId : int):
         if not actorId in self.__removeQueue:
