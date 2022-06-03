@@ -22,11 +22,12 @@ class Actor:
         self.__tags = []
         self.__components = {}
 
-    def add(self, component):
-        if isinstance(component, Component):
-            if not component.name in self.__components:
-                component.actor = self
-                self.__components[component.name] = component
+    def add(self, *components):
+        for compoennt in components:
+            if isinstance(component, Component):
+                if not component.name in self.__components:
+                    component.actor = self
+                    self.__components[component.name] = component
 
     def get(self, component : str):
         if component.name in self.__components:
