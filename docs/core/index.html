@@ -145,7 +145,7 @@ zIndex : int
 <h5 id="methods">Methods</h5>
 <pre><code class="language-python">__init__([optional] name : str)
 # components
-add(component : core.Component)
+add(*component : core.Component)
 get(component : str) -&gt; core.Component
 remove(component : str)
 
@@ -200,7 +200,7 @@ background : tuple
 <h5 id="methods_3">Methods</h5>
 <pre><code class="language-python">__init__([optional], name : str)
 # actor
-add(actor : core.Actor)
+add(*actor : core.Actor)
 remove(actorId : int)
 get(actorId : int) -&gt; core.Actor
 get(name : str) -&gt; core.Actor
