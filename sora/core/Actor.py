@@ -1,5 +1,6 @@
 from sora.core.Component import Component
 from sora.math.Vector2 import Vector2
+import time
 
 class Actor:
     def __init__(self, name="Actor"):
@@ -14,13 +15,23 @@ class Actor:
         self.rotation = 0
 
         # Sprite properties
-        self.image = None
+        self._image = None
+        self.surface = None
         self.color = (255, 255, 255)
         self.zIndex = 0
 
         self.__id = id(self)
         self.__tags = []
         self.__components = {}
+
+    @property
+    def image(self):
+        return self._image
+
+    @image.setter
+    def image(self, value : str):
+        self.surface = None
+        self._image = value
 
     def add(self, *components):
         for component in components:
