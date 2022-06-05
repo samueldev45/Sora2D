@@ -9,6 +9,7 @@ class Scene:
         self.__actors = {}
         self.__appendQueue = []
         self.__removeQueue = []
+        self.__started = False
 
     def add(self, *actors):
         for actor in actors:
@@ -41,12 +42,13 @@ class Scene:
     def start(self):
         for actorId in self.__actors:
             self.__actors[actorId].start()
+        self.__started = True
 
     def update(self):
+        if not self.__started:
+            self.start()
+            
         for actorId in self.__actors:
-            if not self.__actors[actorId].started:
-                self.__actors[actorId].start()
-
             if hasattr(self.__actors[actorId], "update"):
                 self.__actors[actorId].update()
 
