@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Start - Sora2D</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Sora2D</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../core/" class="dropdown-item">Core</a>
+</li>
+                                    
+<li>
+    <a href="../input/" class="dropdown-item">Input</a>
+</li>
+                                    
+<li>
+    <a href="../math/" class="dropdown-item">Math</a>
+</li>
+                                    
+<li>
+    <a href="../renderer/" class="dropdown-item">Renderer</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Getting Started <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Start</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../renderer/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#getting-started" class="nav-link">Getting Started</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#download-the-engine" class="nav-link">Download The Engine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#create-a-window" class="nav-link">Create a Window</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#asset-manager" class="nav-link">Asset Manager</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#actors-and-components" class="nav-link">Actors and Components</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#scene" class="nav-link">Scene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sound" class="nav-link">Sound</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#final-code" class="nav-link">Final Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="getting-started">Getting Started</h1>
+<h2 id="download-the-engine">Download The Engine</h2>
+<hr/>
+
+<p>You can download the engine with github, you can clone this.</p>
+<pre><code>git clone https://github.com/samueldev45/Sora2D
+</code></pre>
+<p>The engine is a folder called sora, move that to your project folder.<br/>
+that's it, you're ready to use Sora2D :D</p>
+<h2 id="create-a-window">Create a Window</h2>
+<hr/>
+<p>Using Sora2D is easy, we will see how to create a window, copy and paste the code below.</p>
+<pre><code class="language-python">from sora.core import *
+
+assets = AssetManager()
+window = Window(assets)
+window.create(800, 600, &quot;First Window&quot;)
+window.mainLoop()
+</code></pre>
+<p>Simple no? with that we already have a window ready to render!<br/></p>
+<h2 id="asset-manager">Asset Manager</h2>
+<hr/>
+
+<p>Asset manager is used to load images and sounds. Example:<br/></p>
+<pre><code class="language-python"># load image
+assets.loadImage(&quot;box&quot;, &quot;box.jpg&quot;)
+
+# load sound
+assets.loadSound(&quot;shot&quot;, &quot;shot.wav&quot;)
+</code></pre>
+<p><strong>WARNING</strong>: You can only load images and sounds with the Asset Manager after you have created the window with the create() method.<br/>
+let's implement this in the previous code:</p>
+<pre><code class="language-python">from sora.core import *
+
+assets = AssetManager()
+window = Window(assets)
+window.create(800, 600, &quot;First Window&quot;)
+
+# load image
+assets.loadImage(&quot;box&quot;, &quot;box.png&quot;)
+
+# load sound
+assets.loadSound(&quot;shot&quot;, &quot;shot.wav&quot;)
+
+window.mainLoop()
+</code></pre>
+<h2 id="actors-and-components">Actors and Components</h2>
+<hr/>
+
+<p>An Actor is an object in which you decide what you want to create, you can create custom components for it, so that it has a certain logic, you can define an image, position, rotation, scale, among others, let's see:</p>
+<pre><code class="language-python">box = Actor()
+box.image = &quot;box&quot;
+box.position.setValues(100, 100)
+box.scale.setValues(64, 64)
+</code></pre>
+<p>In the code above, we are creating an actor and defining its image, notice that we passed "box" to the image of the actor we created, as "box" is the identifier name we use to refer to the image that we load in the Asset Manager.<br/>
+Right after that, we define a position and scale for our actor, by default they already come with some predefined value.<br/></p>
+<p>Components are like add-ons that you can add to your actor, for example you can create a component that allows the actor to move. Lets do this.<br/></p>
+<pre><code class="language-python">class Character(Component):
+    def __init__(self, args={}):
+        defaultArgs = {
+            &quot;Speed&quot; : 2
+        }
+        defaultArgs.update(args)
+        super().__init__(&quot;Character&quot;, defaultArgs)
+
+    def start(self):
+        self.speed = self.args[&quot;Speed&quot;]
+        self.__moveVector = Vector2()
+
+    def getInputs(self):
+        self.__moveVector.zero()
+        keyboard = self.actor.scene.window.keyboard
+
+        if keyboard.pressed(&quot;w&quot;): self.__moveVector.y = -1
+        elif keyboard.pressed(&quot;s&quot;): self.__moveVector.y = 1
+        if keyboard.pressed(&quot;a&quot;): self.__moveVector.x = -1
+        elif keyboard.pressed(&quot;d&quot;): self.__moveVector.x = 1
+
+        if self.__moveVector.length() != 0:
+            self.__moveVector.normalize()
+            self.__moveVector.multiply(self.speed)
+
+    def update(self):
+        self.getInputs()
+        self.actor.position.add(self.__moveVector)
+</code></pre>
+<p>Remembering that this component uses Vector, so we need to import the Vector in the header:</p>
+<pre><code class="language-python">from sora.math import *
+</code></pre>
+<p>Now we just need to apply the component to our actor:</p>
+<pre><code class="language-python">box.add(Character())
+</code></pre>
+<h2 id="scene">Scene</h2>
+<hr/>
+
+<p>If we run our current code, we'll see that it works perfectly, however, nothing appears on the screen, for that we need a Scene, that's where we'll add our actors. Lets do this:</p>
+<pre><code class="language-python">scene = Scene()
+scene.backgroundColor = (50, 150, 255)
+scene.add(box)
+</code></pre>
+<p>In the code above we are creating a scene and setting a background color for it, right after that we add our actor to the scene.<br/>
+If we run our code now, we'll still get a black screen, we've created the scene and added our actor to it, what's left to do? We need to tell the window which scene it should update and draw, let's do this:</p>
+<pre><code class="language-python">window.setScene(scene)
+</code></pre>
+<p>Now yes! we can see our actor and his motion component works perfectly!<br/></p>
+<h2 id="sound">Sound</h2>
+<hr/>
+
+<p>We loaded an audio, but we haven't used it yet, let's do that, add this code snippet below at the end of the <strong>getInputs</strong> method of our component.</p>
+<pre><code class="language-python">if keyboard.keyDown(&quot;space&quot;):
+    self.actor.scene.window.playSound(&quot;shot&quot;)
+</code></pre>
+<p>That's good, now when we hit the spacebar, our audio will be called!<br></p>
+<h2 id="final-code">Final Code</h2>
+<hr/>
+
+<p>Here is the final code, if there was an error with your code, check here!</p>
+<pre><code class="language-python">from sora.core import *
+from sora.math import *
+
+class Character(Component):
+    def __init__(self, args={}):
+        defaultArgs = {
+            &quot;Speed&quot; : 2
+        }
+        defaultArgs.update(args)
+        super().__init__(&quot;Character&quot;, defaultArgs)
+
+    def start(self):
+        self.speed = self.args[&quot;Speed&quot;]
+        self.__moveVector = Vector2()
+
+    def getInputs(self):
+        self.__moveVector.zero()
+        keyboard = self.actor.scene.window.keyboard
+
+        if keyboard.pressed(&quot;w&quot;): self.__moveVector.y = -1
+        elif keyboard.pressed(&quot;s&quot;): self.__moveVector.y = 1
+        if keyboard.pressed(&quot;a&quot;): self.__moveVector.x = -1
+        elif keyboard.pressed(&quot;d&quot;): self.__moveVector.x = 1
+
+        if self.__moveVector.length() != 0:
+            self.__moveVector.normalize()
+            self.__moveVector.multiply(self.speed)
+
+        if keyboard.keyDown(&quot;space&quot;):
+            self.actor.scene.window.playSound(&quot;shot&quot;)
+
+    def update(self):
+        self.getInputs()
+        self.actor.position.add(self.__moveVector)
+
+assets = AssetManager()
+window = Window(assets)
+window.create(800, 600, &quot;First Window&quot;)
+
+# load image
+assets.loadImage(&quot;box&quot;, &quot;box.png&quot;)
+
+# load sound
+assets.loadSound(&quot;shot&quot;, &quot;shot.wav&quot;)
+
+box = Actor()
+box.image = &quot;box&quot;
+box.position.setValues(100, 100)
+box.scale.setValues(64, 64)
+box.add(Character())
+
+scene = Scene()
+scene.backgroundColor = (50, 150, 255)
+scene.add(box)
+
+window.setScene(scene)
+window.mainLoop()
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
